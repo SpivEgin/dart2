@@ -5,7 +5,7 @@
 FROM debian:stretch-slim
 
 # Install Dart.
-ENV DART_VERSION=2.0.0-dev.50.0
+ENV DART_VERSION=2.0.0
 RUN apt-get update &&\
     apt-get install -y unzip wget git build-essential &&\
     apt-get -y autoclean &&\
@@ -13,8 +13,8 @@ RUN apt-get update &&\
 
 # Set environment variables.
 RUN mkdir /opt/dart /opt/dart/code /opt/dart/data /opt/dart/bin /opt/dartlang /opt/config
-#ADD files/dartsdk-linux-x64-release.zip /opt/dartlang/dartsdk-linux-x64-release.zip
-ADD https://storage.googleapis.com/dart-archive/channels/dev/release/${DART_VERSION}/sdk/dartsdk-linux-x64-release.zip /opt/dartlang/
+#      https://storage.googleapis.com/dart-archive/channels/stable/release/2.0.0/sdk/dartsdk-linux-x64-release.zip
+ADD https://storage.googleapis.com/dart-archive/channels/stable/release/${DART_VERSION}/sdk/dartsdk-linux-x64-release.zip /opt/dartlang/
 
 RUN cd /opt/dartlang/ && \
     unzip dartsdk-linux-x64-release.zip && \

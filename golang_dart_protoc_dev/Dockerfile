@@ -1,4 +1,4 @@
-FROM quay.io/spivegin/golang_dart_dev
+FROM quay.io/spivegin/golang_dart2_dev
 
 RUN mkdir /opt/protoc/
 ENV PROTOC=3.5.1 
