@@ -1,5 +1,5 @@
 # dart_dev
 Docker build for dartlang stable channel
-first build
 
-Added Dart 2.1.0
+Dart 2.1.0
+Go 1.11.2

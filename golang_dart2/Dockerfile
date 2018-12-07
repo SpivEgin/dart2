@@ -1,4 +1,4 @@
-FROM quay.io/spivegin/dart2:latest
+FROM quay.io/spivegin/dart2:master
 
 ENV GO_VERSION=1.11.2
 
