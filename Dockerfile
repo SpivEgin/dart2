@@ -12,7 +12,7 @@ RUN apt-get update &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Set environment variables.
-RUN mkdir /opt/dart /opt/dart/code /opt/dart/data /opt/dart/bin /opt/dartlang /opt/config ~/.pub-cache/bin
+RUN mkdir -p /opt/dart /opt/dart/code /opt/dart/data /opt/dart/bin /opt/dartlang /opt/config ~/.pub-cache/bin
 #      https://storage.googleapis.com/dart-archive/channels/stable/release/2.0.0/sdk/dartsdk-linux-x64-release.zip
 ADD https://storage.googleapis.com/dart-archive/channels/stable/release/${DART_VERSION}/sdk/dartsdk-linux-x64-release.zip /opt/dartlang/
 
