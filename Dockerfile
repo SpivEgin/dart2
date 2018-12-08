@@ -13,7 +13,7 @@ ENV DART_VERSION=2.1.0 \
     WPATH=$DARTPATH:$DARTPUB:$PATH
 
 # Install Dart.
-RUN echo export PATH=${WPATH}} >> ~/.bashrc &&\
+RUN echo export PATH=${WPATH} >> ~/.bashrc &&\
     mkdir -p /opt/dart /opt/dart/code /opt/dart/data /opt/dart/bin /opt/dartlang /opt/config ~/.pub-cache/bin
 
 RUN apt-get update &&\
