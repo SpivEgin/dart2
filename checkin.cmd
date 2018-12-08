@@ -1,1 +1,1 @@
-git add -A && git commit -m "added config.sh to dartfile no longed external" && git push
+git add -A && git commit -m "build golang" && git push
