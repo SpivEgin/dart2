@@ -1,1 +1,1 @@
-git add -A && git commit -m "removed slim using full image miss filed depended on, fixed typo" && git push
+git add -A && git commit -m "removed slim using full image miss filed depended on, fixed typo " && git push
