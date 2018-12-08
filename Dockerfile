@@ -25,7 +25,7 @@ ENV DARTPATH=/opt/dartlang/dart-sdk/bin \
     PATH=$DARTPATH:$DARTPUB:$PATH \
     WPATH=$DARTPATH:$DARTPUB:$PATH
 
-RUN echo export PATH=${WPATH}} > ~/.bashrc
+RUN echo export PATH=${WPATH}} >> ~/.bashrc
 # Define working directory.
 WORKDIR /opt/dart/code
 
