@@ -22,9 +22,9 @@ RUN cd /opt/dartlang/ && \
 ENV DARTPATH=/opt/dartlang/dart-sdk/bin \ 
     DARTPUB=~/.pub-cache \ 
     DARTPUBBIN=~/.pub-cache/bin \
-    PATH=$DARTPATH:$DARTPUB:$PATH \
-    HOME=$HOME:$DARTPUBBIN
-# RUN echo export PATH=$DARTPATH:$DARTPUB:$DARTPUBBIN:$PATH > ~/.bashrc
+    PATH=$DARTPATH:$DARTPUB:$PATH
+
+RUN echo export PATH=$DARTPATH:$DARTPUB:$DARTPUBBIN:$PATH > /root/.bashrc
 # Define working directory.
 WORKDIR /opt/dart/code
 

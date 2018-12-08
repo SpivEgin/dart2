@@ -1,1 +1,1 @@
-git add -A && git commit -m "build protoc" && git push
+git add -A && git commit -m "changed env to and added .bashc" && git push

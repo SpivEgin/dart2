@@ -12,7 +12,8 @@ ADD files/config.sh /opt/config/config_protoc.sh
 #     bash /opt/config/config_protoc.sh && \
 #     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN go get -u google.golang.org/grpc && \
+RUN echo export PATH=$GRPCPROTO:$PATH > /root/.bashrc &&\
+    go get -u google.golang.org/grpc && \
     go get -u github.com/golang/protobuf/protoc-gen-go && \
     cd /opt/protoc/ && unzip protoc-${PROTOC}-linux-x86_64.zip && cd ~ && \
     pub global activate protoc_plugin && \
