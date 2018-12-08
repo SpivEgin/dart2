@@ -1,1 +1,1 @@
-git add -A && git commit -m "uped version 00" && git push
+git add -A && git commit -m "added config.sh to dartfile no longed external" && git push
