@@ -15,7 +15,7 @@ RUN mkdir /opt/golang /opt/tmp /opt/src /opt/go
 ADD https://storage.googleapis.com/golang/go${GO_VERSION}.linux-amd64.tar.gz /opt/tmp/
 
 RUN tar -C /opt/ -xzf /opt/tmp/go${GO_VERSION}.linux-amd64.tar.gz &&\
-    echo export  PATH=$GOBIN:$GOPATH:$GOROOT:$PATH > /root/.bashrc &&\
+    echo export  PATH=$GOBIN:$GOPATH:$GOROOT:$PATH >> ~/.bashrc &&\
     rm /opt/tmp/go${GO_VERSION}.linux-amd64.tar.gz &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
