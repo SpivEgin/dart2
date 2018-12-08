@@ -19,7 +19,8 @@ ADD https://github.com/google/protobuf/releases/download/v${PROTOC}/protoc-${PRO
 #     bash /opt/config/config_protoc.sh && \
 #     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN go get -u github.com/golang/protobuf/{proto,protoc-gen-go} &&\
+RUN go get -u github.com/golang/protobuf/proto &&\
+    go get -u github.com/golang/protobuf/protoc-gen-go &&\
     go get -u google.golang.org/grpc && \
     cd /opt/protoc/ && unzip protoc-${PROTOC}-linux-x86_64.zip && cd ~ && \
     echo export PATH=${WPATH} > /root/.bashrc &&\
