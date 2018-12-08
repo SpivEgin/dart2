@@ -8,14 +8,15 @@ ENV GO_VERSION=1.11.2 \
     GOPATH=/opt/src/ \
     GOROOT=/opt/go/ \
     GOBIN=/opt/go/bin/ \
-    PATH=$GOBIN:$GOPATH:$GOROOT:$PATH
+    PATH=$GOBIN:$GOPATH:$GOROOT:$DARTPATH:$DARTPUB:$PATH \
+    WPATH=$GOBIN:$GOPATH:$GOROOT:$DARTPATH:$DARTPUB:$PATH 
 
 RUN mkdir /opt/golang /opt/tmp /opt/src /opt/go
 
 ADD https://storage.googleapis.com/golang/go${GO_VERSION}.linux-amd64.tar.gz /opt/tmp/
 
 RUN tar -C /opt/ -xzf /opt/tmp/go${GO_VERSION}.linux-amd64.tar.gz &&\
-    echo export  PATH=$GOBIN:$GOPATH:$GOROOT:$PATH >> ~/.bashrc &&\
+    echo export  PATH=${WPATH}} > ~/.bashrc &&\
     rm /opt/tmp/go${GO_VERSION}.linux-amd64.tar.gz &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 

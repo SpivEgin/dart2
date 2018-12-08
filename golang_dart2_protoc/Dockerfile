@@ -10,7 +10,8 @@ ENV PROTOC=3.6.1 \
     GOROOT=/opt/go/ \
     GOBIN=/opt/go/bin/ \
     GRPCPROTO=/opt/protoc/bin/ \
-    PATH=$GRPCPROTO:$PATH
+    PATH=$GOBIN:$GOPATH:$GOROOT:$DARTPATH:$DARTPUB:$GRPCPROTO:$PATH \
+    WPATH=$GOBIN:$GOPATH:$GOROOT:$DARTPATH:$DARTPUB:$GRPCPROTO:$PATH
 ADD https://github.com/google/protobuf/releases/download/v${PROTOC}/protoc-${PROTOC}-linux-x86_64.zip /opt/protoc/
 
 # ADD files/config.sh /opt/config/config_protoc.sh
@@ -21,6 +22,6 @@ ADD https://github.com/google/protobuf/releases/download/v${PROTOC}/protoc-${PRO
 RUN go get -u github.com/golang/protobuf/{proto,protoc-gen-go} &&\
     go get -u google.golang.org/grpc && \
     cd /opt/protoc/ && unzip protoc-${PROTOC}-linux-x86_64.zip && cd ~ && \
-    echo export PATH=$GRPCPROTO:$PATH >> /root/.bashrc &&\
+    echo export PATH=${WPATH} > /root/.bashrc &&\
     pub global activate protoc_plugin && \
     rm -rf /opt/protoc/protoc-${PROTOC}-linux-x86_64.zip /var/lib/apt/lists/* /tmp/* /var/tmp/*
