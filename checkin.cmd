@@ -1,1 +1,1 @@
-git add -A && git commit -m "build golang" && git push
+git add -A && git commit -m "build protoc" && git push
