@@ -13,13 +13,12 @@ ENV DART_VERSION=2.1.0 \
     WPATH=$DARTPATH:$DARTPUB:$PATH
 
 # Install Dart.
-RUN echo export PATH=${WPATH} >> ~/.bashrc &&\
-    mkdir -p /opt/dart /opt/dart/code /opt/dart/data /opt/dart/bin /opt/dartlang /opt/config ~/.pub-cache/bin
-
-RUN apt-get update &&\
-    apt-get install -y unzip wget git build-essential &&\
-    apt-get -y autoclean &&\
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN mkdir -p /opt/dart /opt/dart/code /opt/dart/data /opt/dart/bin /opt/dartlang /opt/config ~/.pub-cache/bin &\\
+    echo export PATH=$WPATH >> ~/.bashrc 
+# RUN apt-get update &&\
+#     apt-get install -y unzip wget git build-essential &&\
+#     apt-get -y autoclean &&\
+#     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #      https://storage.googleapis.com/dart-archive/channels/stable/release/2.0.0/sdk/dartsdk-linux-x64-release.zip
 ADD https://storage.googleapis.com/dart-archive/channels/stable/release/${DART_VERSION}/sdk/dartsdk-linux-x64-release.zip /opt/dartlang/
