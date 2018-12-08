@@ -1,1 +1,1 @@
-git add -A && git commit -m "changed env to and added .bashc" && git push
+git add -A && git commit -m "removed slim using full image miss filed depended on" && git push
