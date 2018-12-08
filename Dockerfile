@@ -14,7 +14,7 @@ ENV DART_VERSION=2.1.0 \
 
 # Install Dart.
 RUN mkdir -p /opt/dart /opt/dart/code /opt/dart/data /opt/dart/bin /opt/dartlang /opt/config ~/.pub-cache/bin &\\
-    echo export PATH=$WPATH >> ~/.bashrc 
+    echo export PATH=${DARTPUBBIN}:${DARTPUB}:${DARTPATH}:$PATH >> ~/.bashrc 
 RUN apt-get update &&\
     apt-get install -y unzip wget git build-essential &&\
     apt-get -y autoclean &&\
