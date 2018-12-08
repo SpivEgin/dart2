@@ -28,7 +28,6 @@ RUN cd /opt/dartlang/ && \
     unzip dartsdk-linux-x64-release.zip && \
     rm dartsdk-linux-x64-release.zip
 
-RUN 
 # Define working directory.
 WORKDIR /opt/dart/code
 
