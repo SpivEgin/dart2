@@ -2,7 +2,7 @@
 # LegionMarket Dartlang base
 
 # Pull base image.
-FROM debian:stretch-slim:latest
+FROM debian:stretch-slim
 
 # Install Dart.
 ENV DART_VERSION=2.1.0
