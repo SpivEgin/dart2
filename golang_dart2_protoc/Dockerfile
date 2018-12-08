@@ -6,6 +6,10 @@ ENV PROTOC=3.5.1 \
     DARTPUB=~/.pub-cache \ 
     DARTPUBBIN=~/.pub-cache/bin \
     GRPCPROTO=/opt/protoc/bin/ \
+    GOPATH=/opt/src/ \
+    GOROOT=/opt/go/ \
+    GOBIN=/opt/go/bin/ \
+    GRPCPROTO=/opt/protoc/bin/ \
     PATH=$GRPCPROTO:$PATH
 ADD https://github.com/google/protobuf/releases/download/v${PROTOC}/protoc-${PROTOC}-linux-x86_64.zip /opt/protoc/
 
